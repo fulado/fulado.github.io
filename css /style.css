@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
+
+body {
+  font-family: 'Noto Serif JP', serif;
+  margin: 0;
+  color: #111;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 60px;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #111;
+}
+
+.hero {
+  height: 100vh;
+  background: url("../img/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-text {
+  position: relative;
+  color: white;
+  max-width: 600px;
+}
+
+button {
+  border: 1px solid #111;
+  padding: 12px 24px;
+  background: transparent;
+}
+
+.services, .works, .cta {
+  padding: 80px 60px;
+}
+
+.carousel {
+  display: flex;
+  gap: 30px;
+  animation: scrollLoop 60s linear infinite;
+}
+
+@keyframes scrollLoop {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-50%);}
+}
+
+.carousel:hover {
+  animation-play-state: paused;
+}
+
+/* スマホ */
+@media (max-width:768px){
+  header {flex-direction:column;padding:20px;}
+  .hero {padding:60px 20px;height:auto;}
+}
